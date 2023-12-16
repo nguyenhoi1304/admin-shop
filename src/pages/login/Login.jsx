@@ -1,20 +1,20 @@
 import { useNavigate } from "react-router-dom";
 import "./login.scss";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import UserAPI from "../../API/UserAPI";
-import { AuthContext } from "../../context/AuthContext";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [userList, setUserList] = useState([]);
-  const { loading, error, dispatch } = useContext(AuthContext);
-
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true);
       const response = await UserAPI.getAllData();
       setUserList(response);
+      setLoading(false);
     };
 
     fetchData();
@@ -49,28 +49,34 @@ const Login = () => {
   };
 
   return (
-    <div className="login">
-      <div className="lContainer">
-        <h1 style={{ textAlign: "center", color: "white" }}>Login</h1>
-        <input
-          type="text"
-          placeholder="username"
-          id="username"
-          onChange={(e) => setEmail(e.target.value)}
-          className="lInput"
-        />
-        <input
-          type="password"
-          placeholder="password"
-          id="password"
-          onChange={(e) => setPassword(e.target.value)}
-          className="lInput"
-        />
-        <button onClick={handleSubmit} className="lButton">
-          Login
-        </button>
-      </div>
-    </div>
+    <>
+      {loading ? (
+        <h1 className="message_loading">Please loading wait!</h1>
+      ) : (
+        <div className="login">
+          <div className="lContainer">
+            <h1 style={{ textAlign: "center", color: "white" }}>Login</h1>
+            <input
+              type="text"
+              placeholder="username"
+              id="username"
+              onChange={(e) => setEmail(e.target.value)}
+              className="lInput"
+            />
+            <input
+              type="password"
+              placeholder="password"
+              id="password"
+              onChange={(e) => setPassword(e.target.value)}
+              className="lInput"
+            />
+            <button onClick={handleSubmit} className="lButton">
+              Login
+            </button>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 
