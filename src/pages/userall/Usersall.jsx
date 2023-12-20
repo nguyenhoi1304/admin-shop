@@ -69,8 +69,8 @@ const Usersall = () => {
                   <button
                     className={
                       number === parseInt(page)
-                        ? "page-item active"
-                        : "page-item"
+                        ? "page-item_users active"
+                        : "page-item_users"
                     }
                     name={number}
                     onClick={(e) => {
