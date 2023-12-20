@@ -1,8 +1,8 @@
 import axiosClient from "./axiosClient";
 
 const UserAPI = {
-  getAllData: () => {
-    const url = "/users";
+  getAllData: (page, limit) => {
+    const url = `/users?page=${page}&limit=${limit}`;
     return axiosClient.get(url);
   },
 
