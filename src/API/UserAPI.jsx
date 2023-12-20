@@ -2,8 +2,14 @@ import axiosClient from "./axiosClient";
 
 const UserAPI = {
   getAllData: (page, limit) => {
-    const url = `/users?page=${page}&limit=${limit}`;
-    return axiosClient.get(url);
+    let url;
+    if (page && limit) {
+      url = `/users/pagination?page=${page}&limit=${limit}`;
+      return axiosClient.get(url);
+    } else {
+      url = `/users`;
+      return axiosClient.get(url);
+    }
   },
 
   getDetailData: (id) => {
