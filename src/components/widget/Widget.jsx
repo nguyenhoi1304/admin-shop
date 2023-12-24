@@ -1,4 +1,4 @@
-import "./widget.scss";
+import styles from "./widget.module.scss";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
@@ -73,7 +73,7 @@ const Widget = ({ type }) => {
         isMoney: false,
         icon: (
           <ShoppingCartOutlinedIcon
-            className="icon"
+            className={styles.icon}
             style={{
               backgroundColor: "rgba(218, 165, 32, 0.2)",
               color: "goldenrod",
@@ -89,7 +89,7 @@ const Widget = ({ type }) => {
         isMoney: true,
         icon: (
           <MonetizationOnOutlinedIcon
-            className="icon"
+            className={styles.icon}
             style={{ backgroundColor: "rgba(0, 128, 0, 0.2)", color: "green" }}
           />
         ),
@@ -102,7 +102,7 @@ const Widget = ({ type }) => {
         isMoney: true,
         icon: (
           <AccountBalanceWalletOutlinedIcon
-            className="icon"
+            className={styles.icon}
             style={{
               backgroundColor: "rgba(128, 0, 128, 0.2)",
               color: "purple",
@@ -116,18 +116,18 @@ const Widget = ({ type }) => {
   }
 
   return (
-    <div className="widget">
-      <div className="left">
-        <span className="title">{data1.title}</span>
-        <span className="counter">
+    <div className={styles.widget}>
+      <div className={styles.left}>
+        <span className={styles.title}>{data1.title}</span>
+        <span className={styles.counter}>
           {data1.isMoney && "$"} {data1.countUsers} {data1.countOrders}{" "}
           {data1.totalRevenue}
           {data1.AverageRevenue}
         </span>
-        <span className="link">{data1.link}</span>
+        <span className={styles.link}>{data1.link}</span>
       </div>
-      <div className="right">
-        <div className="percentage positive"></div>
+      <div className={styles.right}>
+        <div className={`${styles.percentage} ${styles.positive}`}></div>
         {data1.icon}
       </div>
     </div>

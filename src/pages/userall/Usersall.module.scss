@@ -19,7 +19,7 @@ td {
   padding: 0 20px;
 }
 
-.title-hotel {
+.title_hotel {
   display: flex;
   justify-content: space-between;
   padding: 10px 50px 0 50px;
@@ -77,7 +77,7 @@ td {
 .btn_next {
   margin-left: 20px;
 }
-.page-item_users {
+.page_item_users {
   border: 1px solid #ccc;
   padding: 3px 15px;
   margin: 0 7px;
@@ -89,6 +89,14 @@ td {
   }
 }
 
-.page-item_users.active {
+.page_item_users.active {
   background-color: #6ccbd8;
+}
+
+.home {
+  display: flex;
+  .homeContainer {
+    flex: 6;
+    margin: 40px;
+  }
 }

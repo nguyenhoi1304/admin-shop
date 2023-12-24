@@ -4,6 +4,14 @@
   word-wrap: break-word;
 }
 .imgUrl_product {
-  width: 300px;
+  width: 400px;
   margin-top: 10px;
+}
+
+.home {
+  display: flex;
+  .homeContainer {
+    flex: 6;
+    margin: 40px;
+  }
 }

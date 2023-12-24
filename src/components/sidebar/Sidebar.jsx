@@ -1,16 +1,9 @@
-import "./sidebar.scss";
+import styles from "./sidebar.module.scss";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
-import CreditCardIcon from "@mui/icons-material/CreditCard";
 import StoreIcon from "@mui/icons-material/Store";
-import InsertChartIcon from "@mui/icons-material/InsertChart";
-import SettingsApplicationsIcon from "@mui/icons-material/SettingsApplications";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
-import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
-import SettingsSystemDaydreamOutlinedIcon from "@mui/icons-material/SettingsSystemDaydreamOutlined";
-import PsychologyOutlinedIcon from "@mui/icons-material/PsychologyOutlined";
-import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import { Link, NavLink } from "react-router-dom";
 import { DarkModeContext } from "../../context/darkModeContext";
 import { useContext } from "react";
@@ -20,69 +13,69 @@ const Sidebar = () => {
   const userName = localStorage.getItem("asm03-user");
 
   return (
-    <div className="sidebar">
-      <div className="top">
+    <div className={styles.sidebar}>
+      <div className={styles.top}>
         <Link to="/home" style={{ textDecoration: "none" }}>
-          {userName && <span className="logo">{userName} Admin</span>}
+          {userName && <span className={styles.logo}>{userName} Admin</span>}
         </Link>
       </div>
       <hr />
-      <div className="center">
+      <div className={styles.center}>
         <ul>
-          <p className="title">MAIN</p>
+          <p className={styles.title}>MAIN</p>
           <NavLink to="/home" style={{ textDecoration: "none" }}>
             <li>
-              <DashboardIcon className="icon" />
+              <DashboardIcon className={styles.icon} />
               <span>Dashboard</span>
             </li>
           </NavLink>
-          <p className="title">USERS</p>
+          <p className={styles.title}>USERS</p>
 
           <Link to="/users" style={{ textDecoration: "none" }}>
             <li>
-              <PersonOutlineIcon className="icon" />
+              <PersonOutlineIcon className={styles.icon} />
               <span>Users</span>
             </li>
           </Link>
-          <p className="title">LISTS</p>
+          <p className={styles.title}>LISTS</p>
           <Link to="/products" style={{ textDecoration: "none" }}>
             <li>
-              <PersonOutlineIcon className="icon" />
+              <PersonOutlineIcon className={styles.icon} />
               <span>Products</span>
             </li>
           </Link>
 
           <NavLink to="/history" style={{ textDecoration: "none" }}>
             <li>
-              <LocalShippingIcon className="icon" />
+              <LocalShippingIcon className={styles.icon} />
               <span>History All</span>
             </li>
           </NavLink>
 
-          <p className="title">NEW</p>
+          <p className={styles.title}>NEW</p>
           <NavLink to="/add-product" style={{ textDecoration: "none" }}>
             <li>
-              <StoreIcon className="icon" />
+              <StoreIcon className={styles.icon} />
               <span>New Product</span>
             </li>
           </NavLink>
 
-          <p className="title">USER</p>
+          <p className={styles.title}>USER</p>
           <li>
-            <ExitToAppIcon className="icon" />
+            <ExitToAppIcon className={styles.icon} />
             <NavLink to="/" style={{ textDecoration: "none" }}>
               Logout
             </NavLink>
           </li>
         </ul>
       </div>
-      <div className="bottom">
+      <div className={styles.bottom}>
         <div
-          className="colorOption"
+          className={styles.colorOption}
           onClick={() => dispatch({ type: "LIGHT" })}
         ></div>
         <div
-          className="colorOption"
+          className={styles.colorOption}
           onClick={() => dispatch({ type: "DARK" })}
         ></div>
       </div>

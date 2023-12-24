@@ -1,16 +1,16 @@
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
-import "./home.scss";
+import styles from "./home.module.scss";
 import Widget from "../../components/widget/Widget";
 import RecentHistory from "../recentHistory/RecentHistory";
 
 const Home = () => {
   return (
-    <div className="home">
+    <div className={styles.home}>
       <Sidebar />
-      <div className="homeContainer">
+      <div className={styles.homeContainer}>
         <Navbar />
-        <div className="widgets">
+        <div className={styles.widgets}>
           <Widget type="user" />
           <Widget type="order" />
           <Widget type="earning" />

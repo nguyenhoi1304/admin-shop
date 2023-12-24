@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Datatable from "../../components/datastable/DataTable";
-import "./RecentHistory.scss";
+import styles from "./RecentHistory.module.scss";
 import HistoryAPI from "../../API/HistoryAPI";
 
 const RecentHistory = (props) => {
@@ -17,7 +17,7 @@ const RecentHistory = (props) => {
   }, []);
 
   return (
-    <div className="listContainer">
+    <div className={styles.listContainer}>
       <h1 style={{ textAlign: "left", marginTop: "20px" }}>
         10 Recent Transactions
       </h1>

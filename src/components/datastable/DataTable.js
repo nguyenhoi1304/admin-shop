@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import "./DataTable.css";
+import React from "react";
+import styles from "./DataTable.module.scss";
 import { Link } from "react-router-dom";
 
 const Datatable = (props) => {
@@ -19,7 +18,7 @@ const Datatable = (props) => {
   return (
     <div>
       <section style={{ margin: "0 auto" }}>
-        <table className="table">
+        <table className={styles.table}>
           <tr>
             {tables.map((item, index) => (
               <th key={index}>{item}</th>
@@ -37,7 +36,7 @@ const Datatable = (props) => {
                 <td>{item.status}</td>
                 <td>
                   <Link to={`/history/${item._id}`}>
-                    <button className="btn_view">View</button>
+                    <button className={styles.btn_view}>View</button>
                   </Link>
                 </td>
               </tr>

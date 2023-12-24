@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
-import "./Usersall.scss";
-import { NavLink } from "react-router-dom";
+import styles from "./Usersall.module.scss";
 import UserAPI from "../../API/UserAPI";
 import Sidebar from "../../components/sidebar/Sidebar";
 const Usersall = () => {
@@ -29,15 +27,15 @@ const Usersall = () => {
   }
 
   return (
-    <div className="home">
+    <div className={styles.home}>
       <Sidebar />
-      <div className="homeContainer">
+      <div className={styles.homeContainer}>
         <section style={{ marginTop: "50px" }}>
           <hr />
-          <div className="title-hotel">
+          <div className={styles.title_hotel}>
             <h1>User List</h1>
           </div>
-          <table className="table">
+          <table className={styles.table}>
             <tr>
               {tables.map((item) => (
                 <th>{item}</th>
@@ -55,9 +53,9 @@ const Usersall = () => {
           </table>
         </section>
         {data && (
-          <div className="btn_move">
+          <div className={styles.btn_move}>
             <button
-              className="btn_prev"
+              className={styles.btn_prev}
               onClick={() => setPage(parseInt(page) - 1)}
               disabled={parseInt(page) === 1}
             >
@@ -69,8 +67,8 @@ const Usersall = () => {
                   <button
                     className={
                       number === parseInt(page)
-                        ? "page-item_users active"
-                        : "page-item_users"
+                        ? styles["page_item_users"] + " " + styles.active
+                        : styles["page_item_users"]
                     }
                     name={number}
                     onClick={(e) => {
@@ -83,7 +81,7 @@ const Usersall = () => {
                 </>
               ))}
             <button
-              className="btn_next"
+              className={styles.btn_next}
               onClick={() => setPage(parseInt(page) + 1)}
               disabled={parseInt(page) === totalPage}
             >

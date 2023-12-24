@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import HistoryAPI from "../../API/HistoryAPI";
-import Navbar from "../navbar/Navbar";
 import Sidebar from "../sidebar/Sidebar";
-
+import styles from "./DetailHistory.module.scss";
 function DetailHistory(props) {
   const { idHistory } = useParams();
 
@@ -25,9 +24,9 @@ function DetailHistory(props) {
   }, []);
 
   return (
-    <div className="home">
+    <div className={styles.home}>
       <Sidebar />
-      <div className="homeContainer">
+      <div className={styles.homeContainer}>
         <div className="container">
           <section className="py-5 bg-light">
             <div className="container">

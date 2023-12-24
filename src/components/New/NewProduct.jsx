@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./NewProduct.scss";
+import styles from "./NewProduct.module.scss";
 import { useNavigate } from "react-router-dom";
 import ProductAPI from "../../API/ProductAPI";
 import Sidebar from "../sidebar/Sidebar";
@@ -71,9 +71,9 @@ const NewProduct = () => {
     }
   };
   return (
-    <div className="home">
+    <div className={styles.home}>
       <Sidebar />
-      <div className="homeContainer">
+      <div className={styles.homeContainer}>
         <h1>Add Product</h1>
         <div className="page-wrapper">
           <div className="page-breadcrumb">

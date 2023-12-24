@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import "./EditProduct.scss";
+import styles from "./EditProduct.module.scss";
 import { useNavigate, useParams } from "react-router-dom";
-import axios from "axios";
 import Sidebar from "../sidebar/Sidebar";
 import ProductAPI from "../../API/ProductAPI";
 const EditProduct = () => {
@@ -78,9 +77,9 @@ const EditProduct = () => {
     }
   };
   return (
-    <div className="home">
+    <div className={styles.home}>
       <Sidebar />
-      <div className="homeContainer">
+      <div className={styles.homeContainer}>
         <h1>Edit Product</h1>
         <div className="page-wrapper">
           <div className="page-breadcrumb">

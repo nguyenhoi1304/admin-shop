@@ -4,6 +4,7 @@ import ProductAPI from "../API/ProductAPI";
 import Pagination from "./Component/Pagination";
 import Sidebar from "../components/sidebar/Sidebar";
 import { Link } from "react-router-dom";
+import styles from "./Products.module.scss";
 
 function Products(props) {
   const [products, setProducts] = useState([]);
@@ -99,9 +100,9 @@ function Products(props) {
   }
 
   return (
-    <div className="home">
+    <div className={styles.home}>
       <Sidebar />
-      <div className="homeContainer">
+      <div className={styles.homeContainer}>
         <div className="page-wrapper">
           <div className="page-breadcrumb">
             <div className="row">

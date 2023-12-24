@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Datatable from "../../components/datastable/DataTable";
-import "./HistoryAll.scss";
+import styles from "./HistoryAll.module.scss";
 import Sidebar from "../../components/sidebar/Sidebar";
 import HistoryAPI from "../../API/HistoryAPI";
 const HistoryAll = () => {
@@ -14,9 +14,9 @@ const HistoryAll = () => {
   }, []);
 
   return (
-    <div className="home">
+    <div className={styles.home}>
       <Sidebar />
-      <div className="homeContainer">
+      <div className={styles.homeContainer}>
         <h1 style={{ textAlign: "left" }}>Orders All</h1>
         {data && <Datatable data={data} />}
       </div>

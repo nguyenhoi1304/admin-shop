@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import "./login.scss";
+import styles from "./login.module.scss";
 import { useEffect, useState } from "react";
 import UserAPI from "../../API/UserAPI";
 const Login = () => {
@@ -51,26 +51,26 @@ const Login = () => {
   return (
     <>
       {loading ? (
-        <h1 className="message_loading">Please loading wait!</h1>
+        <h1 className={styles.message_loading}>Please loading wait!</h1>
       ) : (
-        <div className="login">
-          <div className="lContainer">
+        <div className={styles.login}>
+          <div className={styles.lContainer}>
             <h1 style={{ textAlign: "center", color: "white" }}>Login</h1>
             <input
               type="text"
-              placeholder="username"
-              id="username"
+              placeholder="email"
+              id="email"
               onChange={(e) => setEmail(e.target.value)}
-              className="lInput"
+              className={styles.lInput}
             />
             <input
               type="password"
               placeholder="password"
               id="password"
               onChange={(e) => setPassword(e.target.value)}
-              className="lInput"
+              className={styles.lInput}
             />
-            <button onClick={handleSubmit} className="lButton">
+            <button onClick={handleSubmit} className={styles.lButton}>
               Login
             </button>
           </div>
